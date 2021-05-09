@@ -1,0 +1,59 @@
+range 는 어떤 범위 안의 숫자들을 만들어주는 반복할 수 있는 객체를 생성해줍니당. 그래서 print 를 통해 출력되는 것은 객체 그 자체입니당.
+
+이 반복할 수 있는 객체를 통해 list() 라든지 for 문을 통해 우리가 원하는 결과를 얻을 수 있는 것이죵.
+
+미리 메모리 상에 range 범위의 숫자들을 다 생성하지 않고, 필요한 경우에만 for 문이나 list() 등을 통해 원하는 숫자들을 얻게 되는 것입니당.
+
+원리를 궁금해 하셨으니, 제가 아는데까지만 설명을 좀 더 드리자면
+
+numbers = range(1, 4)
+iter_object = iter(numbers)
+print(next(iter_object))
+print(next(iter_object))
+print(next(iter_object))
+print(next(iter_object))
+
+# 결과
+1
+2
+3
+Traceback (most recent call last):
+    print(next(iter_object))
+StopIteration
+
+
+
+range 객체는 반복할 수 있는 객체(iterable)이므로 iter 메소드를 쓸 수 있습니다. 이 iter 메소드를 쓰면 객체는 값을 하나씩 꺼내서 쓸 수 있는 iterator 가 됩니당.
+
+이 iterator 객체에서 next 메소드를 쓰게 되면 하나씩 값을 꺼내주게 되고, 더이상 꺼낼 값이 없을 때는 StopIteration 이라는 에러를 발생시키며 종료됩니다.
+
+for number in range(1, 4):
+    print(number)
+
+
+위와 같이 쓰였을 때 1, 2, 3 이 출력되는건 for 반복문에서 next 를 호출하기 때문에 가능한 것입니당(좀 더 정확하게는 __ next __() 겠지만 이 형태는 나중에 객체지향에서 배워보시길 바랍니다)
+
+결국 list(range(1, 4)) 와 같이 썼을 때도 요청에 따라 iterable 한 객체가 list 형으로 형변환 되는 것이라 생각하시면 될 것 같습니당. 내부적으로 어떻게 형변환이 동작하는지는
+
+저도 정확히는 모르지만 비슷한 원리지 않을까 추측됩니당
+
+
+
+원리라는게 사실 알고 싶어하면 끝도 없는 것이라, 처음 배우실 때는 어떻게 활용하는지에 중점을 두고 배우신다면 좀 더 재밌게 배우실 수 있을 것이라 생각합니당^^
+
+
+
+#range에는 소수가 들어갈 수 없다 (0.1 같은 소수요.. float형 같은겨유..)
+for문은 반복횟수가 정해져있음.. -> 반복횟수가 달라지거나 무한반복 원하면 웬만하면 while을 쓰기!
+
+# %operator
+코드	설명
+%s	문자열(String)
+%c	문자 1개(character)
+%d	정수(Integer)
+%f	부동소수(floating-point)
+%o	8진수
+%x	16진수
+%%	Literal % (문자 % 자체)
+
+#중첩을 해야할 때는 중첩을 해야됨!

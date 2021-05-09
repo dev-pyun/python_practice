@@ -1,0 +1,38 @@
+기초강의에서 배우진 않지만, 튜플이라는 자료형이 있습니당.
+
+리스트는 대괄호를 쓰게되는데, 튜플에서는 소괄호를 쓰게 됩니다.
+
+(값1, 값2, 값3...)
+위처럼 괄호와 comma 를 이용해 표기하게 되어요.
+
+그런데 이 괄호를 쓰지 않고
+
+값1, 값2
+와 같이 쓰더라도 튜플로 인식을 하게 됩니다.
+
+즉 아래와 같습니다.
+
+numbers1 = (1, 2)
+print(type(numbers1))    # <class 'tuple'>
+numbers2 = 1, 2
+print(type(numbers2))    # <class 'tuple'>
+그럼 = 을 기준으로 우측의 numbers[left], numbers[right] 가 튜플이 된다는 것은 위로써 설명이 될 것입니다.
+
+그리고 또 설명해야 할 것은 unpacking 입니다.
+
+numbers = [1, 2, 3]
+a, b, c, = numbers
+print(a, b, c)    # 1, 2, 3
+﻿
+
+위 코드를 보시게 되면 numbers 의 각 요소들이 하나씩 a, b, c 에 할당되게 되는데 이런걸 unpacking 이라고 부릅니다.
+
+마찬가지로
+
+numbers[right], numbers[left] = numbers[left], numbers[right] 도 unpacking 과 같습니다.
+
+numbers[right] 에 numbers[left]를 할당하고 numbers[left]에 numbers[right]를 할당하는 Unpacking 을 진행하는 것이에요.
+
+이렇게 unpacking 을 하게 되면 결국 자리바꿈을 한 것과 동일한 결과가 나오는 것입니다.
+
+읽어보시면서 이해를 해보시고 이해가 안되면 다시 남겨주세용^^
