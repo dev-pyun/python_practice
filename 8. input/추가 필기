@@ -1,0 +1,37 @@
+이미 좋은 답변들이 달려서 도움일 될지는 모르겠습니다.
+
+참고 삼아 예제를 달아봅니다. 😊
+
+# raise 이용하기
+raise를 이용해서 error handling 을 할 수 있습니다.
+
+class NotPosInteger(Exception):
+    ﻿def __str__(self):
+        return "양의 정수가 아닌 값이 입력되었습니다...ㅠㅠ"
+
+class OutOfRange(Exception):
+    def __str__(self):
+        ﻿return "범위 외의 값이 입력되었습니다..."
+
+def validate(input_value):
+    length = len(input_value)
+    for i in range(length):
+        char_code = ord(input_value[i])
+        if 48 > char_code or char_code > 58:
+            raise NotPosInteger
+
+    int_value = int(input_value)
+    if int_value == 0:
+        raise NotPosInteger﻿
+    if 1 > int_value or int_value > 20:
+        raise OutOfRange
+
+    return "문제없음!"
+
+while True:
+    try:
+        print(validate(input()))
+    except NotPosInteger as e:
+        print(e)
+    except OutOfRange as e:
+        print(e)
