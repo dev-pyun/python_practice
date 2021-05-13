@@ -1,0 +1,6 @@
+import random
+
+#randint 메소드
+random.randint(a, b)    ->      a이상 b이하의 랜덤한 정수를 가져옴.
+random.uniform(a, b)    ->      a이상 b 이하의 랜덤한 소수 출력
+random.random()         ->      0과 1사이의 랜덤한 수 출력

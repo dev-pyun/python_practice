@@ -1,0 +1,27 @@
+datetime module은 '날짜'와 '시간'을 다루기 위한 다양한 '클래스'를 갖추고 있음.
+
+import datetime
+
+pi_day = datetime.datetime(2020, 3, 14)     #날짜 생성
+pi_day = datetime.datetime(2020, 3, 14, 13, 6, 15)      #시간까지 생성
+
+type(pi_day)    #<datetime.datetime>
+
+datetime.datetime.now       #코드를 실행한 순간의 날짜와 시간.
+
+print(today - pi_day)       #시간차이 알 수 있음.
+deltatime = today - pi_day
+print(pi_day + deltatime)   #시간차를 더할 수 있음.
+
+#연도와 월 등을 추출하기
+
+today = datetime.datetime.now()
+
+print(today)
+print(today.year)  # 연도
+print(today.month)  # 월
+print(today.day)  # 일
+print(today.hour)  # 시
+print(today.minute)  # 분
+print(today.second)  # 초
+print(today.microsecond)  # 마이크로초
