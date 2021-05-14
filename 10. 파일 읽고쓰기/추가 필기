@@ -1,0 +1,5 @@
+encoding 문제 때문일거 같아요. 제 예상엔 windows 쓰실거 같은데요.
+
+open 함수의 parameter로 encoding='utf-8'을 주시거나
+한글 파일명 자체를 encode('utf-8') 해서 open의 파일명을
+넣는 parameter에 넣어주시면 될거 같아요.
